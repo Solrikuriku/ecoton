@@ -1,0 +1,36 @@
+.menu {
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li{
+    display: inline;
+    margin: 0 10px;
+}
+
+.logo {
+    background-image: url("images/logo.png");
+    background-size: cover;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+.container {
+    background-color:aquamarine;
+    display: flex;
+}
+
+.nature_fact  {
+    font-size: 100%;
+    color: darkcyan;
+    text-align: center;
+}
+
+.test {
+    font-size: 100%;
+    color:darkcyan
+}
