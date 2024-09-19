@@ -1,2 +1,5 @@
-hey
-some new words
+Веб-сайт EcoMap для хакатона.
+
+Стек технологий: 
+Фронтенд: html+css+немного js. 
+Бэкенд: php + MySQL через phpMyAdmin и локального сервера на xampp. 
