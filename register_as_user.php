@@ -1,5 +1,6 @@
-//Пользователь регистрируется, информация о нем заносится в таблицу users.
 <?php
+    #Пользователь регистрируется, информация о нем заносится в таблицу users.
+
     require_once('db.php');
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
