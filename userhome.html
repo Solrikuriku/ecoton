@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--здесь должны быть заданы стили для аккаунтов через css-->
     <link rel="stylesheet" type="text/css" href="user_account.css">
     <title>Страница пользователя</title>
 </head>
 <body>
+    <!--
+        Пользователь заполняет форму и отправляет администратору.
+        Вся отправленная информация содержится на сервере.
+        В дальнейшем планируется добавить дату, время, место и автоматическую метку на карту.
+    -->
     <div class="order">
-    <form action="uploadsame.php" method="post">
-        <input type="text" placeholder="ФИО" name="name">
-        <input type="text" placeholder="Ваш ИНН???" name="inn">
-        <textarea name="text" cols="40" rows="5">Чево хотите</textarea>
-        <button type="submit">Отправить ваши предложения администрации</button>
-    </form>
+        <form action="uploadsame.php" method="post">
+            <input type="text" placeholder="ФИО" name="name">
+            <input type="text" placeholder="Ваш ИНН???" name="inn">
+            <textarea name="text" cols="40" rows="5"></textarea>
+            <button type="submit">Отправить ваши предложения администрации</button>
+        </form>
     </div>
 </body>
 </html>

@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>некрасиво</title>
-
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>GreenMap</title>
+    <link rel="stylesheet" type="text/css" href="econergy/main.css">
 </head>
 <body>
     <header class="menu">
-        <!--<div class="logo"></div>-->
+        <!--Шапка сайта.-->
         <img src="images/logo.png" alt="это логотип" style="width: 10%; position: relative; left: 5px;">
         <nav>
             <ul>
                 <li><a href = "schedule.html">Афиша</a></li>
-                <li>Плюшки</li>
-                <li>Кеки</li>
-                <li>Чебуреки</li>
-                <li>Экодискотека</li>
+                <li>Фестивали</li>
+                <li>Сбор мусора</li>
+                <li>Высадка деревьев</li>
+                <li>Мастер-классы</li>
+                <li>Лекции</li>
+                <li>Кинопоказы</li>
+                <li>Субботник</li>
+                <li>Спортивные состязания</li>
+                <li>Акции</li>
+            </ul>
+            <ul>
+                <!--Кнопки авторизации и регистрации.-->
                 <button><a href = "authorization.html">Войти</a></button>
                 <button><a href = "registration.html">Зарегистрироваться</a></button>
             </ul>
         </nav>
     </header>
 
-    <!--
-    <div class="container">
-        <p class="test">некрасиво, знаю</p>
-    </div>
-    -->
-    
+    <!--Небольшая фича, где планировалось загружать из базы данных некий случайный факт.-->
     <p class="nature_fact">%рандомный факт о природе%</p>
 
+    <!--Афиша о событиях на текущую дату с переадресацией на события мепроприятий (планировалось).-->
     <div class="today"> 
         <nav>
             <ul>
                 <li>сегодня это</li>
-                <li>сегодня сё</li>
+                <li>сегодня то</li>
                 <li>сегодня пятое</li>
                 <li>сегодня десятое</li>
                 <li><a href = "schedule.html">и че то еще</a></li>
@@ -44,6 +47,7 @@
         </nav>
     </div>
 
+    <!--Выгрузка интерактивной карты Yandex Maps с метками.-->
     <div class = "map">
         <script type="text/javascript" charset="utf-8" 
             async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aafbd571fc326e7884c18596fbf4df7e61c89111df6f53d68c44352eecaba25e2&amp;width=auto&amp;height=400&amp;lang=ru_RU&amp;scroll=true">

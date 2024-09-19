@@ -7,55 +7,64 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+    <!--
+      Логинимся. Идет поиск в базе данных совпадений имени пользователя и соответствующего ему пароля.
+      Добавлены кнопки для будущей реализации авторизации через Госуслуги и Мос.ру
+    -->
     <div class = "login_user">
-    <form action="login_as_user.php" method="post">
+      <form action="login_as_user.php" method="post">
         <input type="text" placeholder="Логин" name="login">
         <input type="password" placeholder="Пароль" name="password">
         <button type="submit">Авторизироваться</button>
         <button type="submit">Через Госуслуги</button>
-        <button type="submit">Через мос.ру</button>
-    </form>
+        <button type="submit">Через Мос.ру</button>
+      </form>
     </div>
+    
+    <!--
+      Здесь должна быть тестовая реализация авторизации через VK.
+      Код был автоматически сгенерирован при попытке подключения сайта к VK API.
+    -->
     <div>
         <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
         <script type="text/javascript">
-          if ('VKIDSDK' in window) {
-            const VKID = window.VKIDSDK;
+        if ('VKIDSDK' in window) {
+          const VKID = window.VKIDSDK;
       
-            VKID.Config.init({
-              app: 1,
-              redirectUrl: 'https://localhost',
-              source: VKID.ConfigSource.LOWCODE,
-            });
+          VKID.Config.init({
+            app: 1,
+            redirectUrl: 'https://localhost',
+            source: VKID.ConfigSource.LOWCODE,
+          });
       
-            const oneTap = new VKID.OneTap();
+          const oneTap = new VKID.OneTap();
       
-            oneTap.render({
-              container: document.currentScript.parentElement,
-              showAlternativeLogin: true,
-              styles: {
-                width: 265
-              }
-            })
-            .on(VKID.WidgetEvents.ERROR, vkidOnError)
-            .on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
-              const code = payload.code;
-              const deviceId = payload.device_id;
+          oneTap.render({
+            container: document.currentScript.parentElement,
+            showAlternativeLogin: true,
+            styles: {
+              width: 265
+            }
+          })
+          .on(VKID.WidgetEvents.ERROR, vkidOnError)
+          .on(VKID.OneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+            const code = payload.code;
+            const deviceId = payload.device_id;
       
-              VKID.Auth.exchangeCode(code, deviceId)
-                .then(vkidOnSuccess)
-                .catch(vkidOnError);
-            });
-          }
+            VKID.Auth.exchangeCode(code, deviceId)
+              .then(vkidOnSuccess)
+              .catch(vkidOnError);
+          });
+        }
           
-          function vkidOnSuccess(data) {
-            // Обработка полученного результата
-          }
+        function vkidOnSuccess(data) {
+          // Обработка полученного результата
+        }
         
-          function vkidOnError(error) {
-            // Обработка ошибки
-          }
-        </script>
-      </div>
+        function vkidOnError(error) {
+          // Обработка ошибки
+        }
+      </script>
+    </div>
 </body>
 </html>

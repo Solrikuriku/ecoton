@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница администратора</title>
+    <style> ul { list-style-type: none; } </style>
 </head>
 <body>
+    <!--Выбираем базу данных, из которой будем выгружать информацию о мероприятиях для администратора-->
+    <?php 
+    require 'db.php';
+    $result = mysqli_query($conn, 'SELECT * FROM `request`');
+    ?> 
     
+    <!--Здесь мы через цикл и подключение к php получаем весь список заявок, полученных администратором-->
+    <div class = "requests">
+        <ul>
+            <?php
+            while ($users_requests = mysqli_fetch_assoc($result))
+            { ?>
+                <li><br>ФИО: <?php echo $users_requests['name']; ?></li>
+                <li>ИНН:<?php echo $users_requests['inn']; ?></li>
+                <li>Описание заявки: <br><?php echo $users_requests['text']; ?><br></li>
+                <!--После того, как администратор нажмет кнопку, в таблице request_status будет содержаться статус заявки-->
+                <form action="admin_bd.php" method="post">
+                    <button type = 'submit' name = "status_btn" value="Одобрено">Одобрить</button>
+                    <button type = 'submit' name = "status_btn" value="Отклонено">Отклонить</button>
+                    <input type = "hidden" name = "id_request" value = "<?php echo $users_requests['id']; ?>" />
+                </form>
+                <?php
+            }
+            ?>
+        </ul>
+    </div>
 </body>
 </html>

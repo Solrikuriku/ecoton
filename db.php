@@ -1,16 +1,13 @@
+//Общий файл для подключения к базе данных на локальном (пока что) сервере.
 <?php
+    $servername = "econergy.test";
+    $username = "root";
+    $password = "";
+    $dbname = "econergy";
 
-$servername = "econergy.test";
-$username = "root";
-$password = "";
-$dbname = "econergy";
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if(!$conn){
-    die("Не удалось зарегистрироваться". mysqli_connect_error());
-}
-else{
-
-}
+    if(!$conn){
+        die("Не удалось зарегистрироваться". mysqli_connect_error());
+    }
 ?>
